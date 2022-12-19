@@ -12,6 +12,8 @@ CREATE TABLE members(
 
 SHOW CREATE TABLE members;
 
+SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA LIKE 'test'; 
+
 
 -- GET All Data
 SELECT * FROM members;
