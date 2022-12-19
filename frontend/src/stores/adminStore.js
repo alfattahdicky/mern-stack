@@ -40,9 +40,20 @@ const useAdminStore = create((set, get) => ({
   },
   updateDataById: async (id, data) => {
     try {
+      const state = get();
       const response = await apiClient.put(`/data/${id}`, JSON.stringify(data));
       const dataById = response.data.payload;
-      set({ message: dataById.message, error: "" });
+
+      if (dataById.statusCode) {
+        const datasUpdate = state.datas.map((dataUpdate) => {
+          if (dataUpdate.id === data.id) {
+            return { ...data };
+          } else {
+            return dataUpdate;
+          }
+        });
+        set({ datas: datasUpdate, message: dataById.message, error: "" });
+      } else throw new Error();
 
       return dataById.statusCode;
     } catch (err) {
@@ -52,9 +63,15 @@ const useAdminStore = create((set, get) => ({
   },
   deleteDataById: async (id) => {
     try {
+      const state = get();
       const response = await apiClient.delete(`/data/${id}`);
 
       const dataById = response.data.payload;
+
+      if (dataById.statusCode) {
+        const filterData = state.datas.filter((data) => data.id !== id);
+        set({ datas: filterData });
+      }
 
       return dataById.statusCode;
     } catch (err) {

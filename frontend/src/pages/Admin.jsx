@@ -81,7 +81,7 @@ const Admin = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const update = await updateDataById(3, edit);
+    const update = await updateDataById(edit.id, edit);
     if (update === 200) {
       toast({
         position: "top-right",
@@ -125,7 +125,7 @@ const Admin = () => {
                   <Td>{data.nama_lengkap}</Td>
                   <Td>{data.email}</Td>
                   <Td>{data.alamat}</Td>
-                  <Td>{data.pekerjaan}</Td>
+                  <Td>{data.pekerjaan.toUpperCase()}</Td>
                   <Td>
                     <ButtonGroup>
                       <Button
