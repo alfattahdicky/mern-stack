@@ -108,10 +108,26 @@ const ModalRegister = ({
                 borderColor="whiteAlpha.200"
                 onChange={handleChangeJob}
                 focusBorderColor="yellow.500"
+                bgColor="chocolate"
               >
-                <option value="pns">PNS</option>
-                <option value="swasta">Swasta</option>
-                <option value="usaha">Usaha</option>
+                <option
+                  value="pns"
+                  style={{ backgroundColor: "rgb(39, 39, 39)" }}
+                >
+                  PNS
+                </option>
+                <option
+                  value="swasta"
+                  style={{ backgroundColor: "rgb(39, 39, 39)" }}
+                >
+                  Swasta
+                </option>
+                <option
+                  value="usaha"
+                  style={{ backgroundColor: "rgb(39, 39, 39)" }}
+                >
+                  Usaha
+                </option>
               </Select>
             </Box>
             <Button
