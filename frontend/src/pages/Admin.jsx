@@ -14,9 +14,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import ModalRegister from "../components/ModalRegister";
 import useAdminStore from "../stores/adminStore";
 
@@ -29,7 +27,7 @@ const Admin = () => {
   const error = useAdminStore((state) => state.error);
   const datas = useAdminStore((state) => state.datas);
   const data = useAdminStore((state) => state.data);
-  const [edit, setEdit] = useState(data);
+  const [edit, setEdit] = useState({});
   const { isOpen, onClose, onOpen } = useDisclosure();
 
   useEffect(() => {

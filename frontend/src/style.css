@@ -1,0 +1,8 @@
+
+.swiper-container-horizontal>.swiper-pagination-progressbar.swiper-pagination-progressbar-opposite, 
+.swiper-container-vertical>.swiper-pagination-progressbar {
+    position: absolute;
+    left: 95%;
+    top: 25%;
+    height: 50%;
+}

@@ -8,16 +8,21 @@ const Header = () => {
       display="flex"
       alignItems="center"
       justifyContent="space-between"
-      px="4rem"
+      px={{ base: "2rem", md: "4rem" }}
       py="1.6rem"
       position="fixed"
+      zIndex="10"
       top="0"
       left="0"
       right="0"
     >
       <Flex alignItems="center">
         <Image src="/multimatics-logo.png" objectFit="cover" />
-        <SocialMedia ms="3rem" colorIcon="white" />
+        <SocialMedia
+          ms="3rem"
+          colorIcon="white"
+          display={{ base: "none", md: "block" }}
+        />
       </Flex>
       <Navbar />
     </Box>
