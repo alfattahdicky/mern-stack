@@ -11,6 +11,7 @@ CREATE TABLE members(
 );
 
 SHOW CREATE TABLE members;
+DROP TABLE members;
 
 SELECT TABLE_NAME FROM information_schema.TABLES WHERE TABLE_SCHEMA LIKE 'test'; 
 
