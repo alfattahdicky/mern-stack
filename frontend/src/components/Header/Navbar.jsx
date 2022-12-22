@@ -34,6 +34,7 @@ const Navbar = () => {
     email: "",
     pekerjaan: "",
     alamat: "",
+    jenis_kelamin: "",
   });
 
   const handleChangeName = (e) => {
@@ -48,9 +49,14 @@ const Navbar = () => {
   const handleChangeEmail = (e) => {
     setRegister({ ...register, email: e.target.value });
   };
+  const handleChangeGender = (e) => {
+    console.log(e.target.value);
+    setRegister({ ...register, jenis_kelamin: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    console.table(register);
     try {
       const data = await postData(register);
       if (data === 200) {
@@ -221,6 +227,7 @@ const Navbar = () => {
         handleChangeEmail={(e) => handleChangeEmail(e)}
         handleChangeAddress={(e) => handleChangeAddress(e)}
         handleChangeJob={(e) => handleChangeJob(e)}
+        handleChangeGender={(e) => handleChangeGender(e)}
         handleSubmit={handleSubmit}
       />
     </Box>

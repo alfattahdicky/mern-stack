@@ -26,6 +26,14 @@ INSERT INTO members VALUES nama_lengkap = 'Azka', alamat = 'Lebak Para', email =
 -- Edit data
 UPDATE members SET nama_lengkap = 'Dicky', pekerjaan = 'swasta' WHERE id = 1;
 
+-- ADD COlumn Data jenis_kelamin
+ALTER TABLE members
+  ADD COLUMN jenis_kelamin ENUM('Laki-laki', 'Wanita') 
+  AFTER pekerjaan;
+
+ALTER TABLE members
+  UPDATE COLUMN jenis_kelamin NOT NULL;
+
 -- DELETE data
 
 DELETE FROM members WHERE id = 1;

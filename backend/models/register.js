@@ -5,7 +5,7 @@ import connection from "../config/dbConfig.js";
  * @param {callback} result callback
  */
 export const register = (data, result) => {
-  const sql = `INSERT INTO members(nama_lengkap, alamat, email, pekerjaan) VALUES (?, ?, ?, ?)`;
+  const sql = `INSERT INTO members(nama_lengkap, alamat, email, pekerjaan, jenis_kelamin) VALUES (?, ?, ?, ?, ?)`;
 
   connection.query(sql, Object.values(data), (err, res) => {
     if (err) {

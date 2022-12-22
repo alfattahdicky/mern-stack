@@ -19,6 +19,7 @@ const useAdminStore = create((set, get) => ({
     alamat: "",
     email: "",
     job: "",
+    jenis_kelamin: "",
   },
   getData: async () => {
     try {

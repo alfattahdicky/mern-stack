@@ -14,6 +14,7 @@ export const registerData = {
       alamat: await req.body.alamat,
       email: await req.body.email,
       pekerjaan: await req.body.pekerjaan,
+      jenis_kelamin: await req.body.jenis_kelamin,
     };
 
     register(data, (err, data) => {

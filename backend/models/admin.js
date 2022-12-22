@@ -27,11 +27,18 @@ const queryGetDataById = (id, result) => {
 
 const updateDataById = (id, data, result) => {
   const sql =
-    "UPDATE members SET nama_lengkap = ?, email = ?, alamat = ?, pekerjaan = ? WHERE id = ?";
+    "UPDATE members SET nama_lengkap = ?, email = ?, alamat = ?, pekerjaan = ? , jenis_kelamin = ? WHERE id = ?";
 
   connection.query(
     sql,
-    [data.nama_lengkap, data.email, data.alamat, data.pekerjaan, id],
+    [
+      data.nama_lengkap,
+      data.email,
+      data.alamat,
+      data.pekerjaan,
+      data.jenis_kelamin,
+      id,
+    ],
     (err, res) => {
       if (err) {
         console.log("error: ", err);
@@ -61,4 +68,4 @@ const deleteDataById = (id, result) => {
   });
 };
 
-export { getAllData, queryGetDataById ,updateDataById, deleteDataById };
+export { getAllData, queryGetDataById, updateDataById, deleteDataById };

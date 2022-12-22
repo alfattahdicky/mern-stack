@@ -26,7 +26,7 @@ export const adminData = {
     const id = req.params.id;
     if (!req.body) {
       await req.status(400).json({
-        message: "Some erro while get data by id",
+        message: "Some error while get data by id",
       });
     }
 
@@ -54,6 +54,7 @@ export const adminData = {
       alamat: await req.body?.alamat,
       email: await req.body?.email,
       pekerjaan: await req.body?.pekerjaan,
+      jenis_kelamin: await req.body?.jenis_kelamin,
     };
 
     updateDataById(id, data, (err, data) => {

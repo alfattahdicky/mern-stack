@@ -68,6 +68,7 @@ const Admin = () => {
     setEdit({ ...edit, nama_lengkap: e.target.value });
   };
   const handleChangeJob = (e) => {
+    console.log(e.target.value);
     setEdit({ ...edit, pekerjaan: e.target.value });
   };
   const handleChangeAddress = (e) => {
@@ -75,6 +76,10 @@ const Admin = () => {
   };
   const handleChangeEmail = (e) => {
     setEdit({ ...edit, email: e.target.value });
+  };
+  const handleChangeGender = (e) => {
+    console.log(e.target.value);
+    setEdit({ ...edit, jenis_kelamin: e.target.value });
   };
 
   const handleSubmit = async (e) => {
@@ -112,6 +117,7 @@ const Admin = () => {
               <Th color="white">Email</Th>
               <Th color="white">Alamat</Th>
               <Th color="white">Pekerjaan</Th>
+              <Th color="white">Jenis Kelamin</Th>
               <Th color="white">Action</Th>
             </Tr>
           </Thead>
@@ -124,6 +130,7 @@ const Admin = () => {
                   <Td>{data.email}</Td>
                   <Td>{data.alamat}</Td>
                   <Td>{data.pekerjaan.toUpperCase()}</Td>
+                  <Td>{data.jenis_kelamin}</Td>
                   <Td>
                     <ButtonGroup>
                       <Button
@@ -153,10 +160,12 @@ const Admin = () => {
         addressValue={edit.alamat}
         emailValue={edit.email}
         jobValue={edit.pekerjaan}
+        genderValue={edit.jenis_kelamin}
         handleChangeName={(e) => handleChangeName(e)}
         handleChangeEmail={(e) => handleChangeEmail(e)}
         handleChangeAddress={(e) => handleChangeAddress(e)}
         handleChangeJob={(e) => handleChangeJob(e)}
+        handleChangeGender={(e) => handleChangeGender(e)}
         handleSubmit={handleSubmit}
       />
     </Stack>

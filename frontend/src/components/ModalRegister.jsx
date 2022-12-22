@@ -21,10 +21,12 @@ const ModalRegister = ({
   addressValue,
   jobValue,
   emailValue,
+  genderValue,
   handleChangeName,
   handleChangeEmail,
   handleChangeAddress,
   handleChangeJob,
+  handleChangeGender,
   handleSubmit,
 }) => {
   return (
@@ -127,6 +129,32 @@ const ModalRegister = ({
                   style={{ backgroundColor: "rgb(39, 39, 39)" }}
                 >
                   Usaha
+                </option>
+              </Select>
+            </Box>
+            <Box pt="1.5rem">
+              <FormLabel htmlFor="jenis_kelamin">Jenis Kelamin</FormLabel>
+              <Select
+                placeholder="Pilih Jenis Kelamin"
+                required
+                value={genderValue}
+                _hover={{ borderColor: "whiteAlpha.400" }}
+                borderColor="whiteAlpha.200"
+                onChange={handleChangeGender}
+                focusBorderColor="yellow.500"
+                bgColor="chocolate"
+              >
+                <option
+                  value="Laki-laki"
+                  style={{ backgroundColor: "rgb(39, 39, 39)" }}
+                >
+                  Laki-laki
+                </option>
+                <option
+                  value="Wanita"
+                  style={{ backgroundColor: "rgb(39, 39, 39)" }}
+                >
+                  Wanita
                 </option>
               </Select>
             </Box>
